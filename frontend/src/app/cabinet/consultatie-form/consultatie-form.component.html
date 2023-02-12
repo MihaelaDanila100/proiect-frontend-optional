@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    
+    <div *ngIf = "errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ errormsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <form [formGroup] = "consultatieForm" (ngSubmit) = "consultatieSubmit()">
+        <div class="col-lg-4 mt-2">
+            <label>Diagnostic: </label>
+            <input type="text" class = "form-control" formControlName = "diagnostic" placeholder="Diagnostic">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Simptome: </label>
+            <input type="text" class = "form-control" formControlName = "simptome" placeholder="Simptome">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Tratament: </label>
+            <input type="text" class = "form-control" formControlName = "tratament" placeholder="Tratament">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Observatii: </label>
+            <input type="text" class = "form-control" formControlName = "observatii" placeholder="Observatii">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Temperatura: </label>
+            <input type="number" class = "form-control" formControlName = "temperatura" placeholder="Temperatura">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Puls: </label>
+            <input type="number" class = "form-control" formControlName = "puls" placeholder="Puls">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Tensiune: </label>
+            <input type="number" class = "form-control" formControlName = "tensiune" placeholder="Tensiune">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Greutate: </label>
+            <input type="number" class = "form-control" formControlName = "greutate" placeholder="Observatii">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <button class="btn btn-primary btn-sm">Trimite</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<button class="btn btn-dark" (click) = "logOut()">Log Out</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Pacient</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let pacient of totiPacientii">
+        <td>{{ pacient.Nume }}</td>
+        <td>
+            <button class="btn btn-primary" (click) = "accesDosar(pacient.ID_Pacient)">Acces</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

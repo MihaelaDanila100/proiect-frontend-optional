@@ -1,0 +1,10 @@
+<div class="home_page">
+    <div class="thumbnail_cards_container">
+        <app-profile-info-thumbnail *ngFor = "let thumbnail_card of thumbnail_cards" 
+                                    [thumbnail_card] = "thumbnail_card" (onBtnClicked) = "showForm($event)">
+        </app-profile-info-thumbnail>
+    </div>
+</div>
+
+
+<router-outlet></router-outlet>

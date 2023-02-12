@@ -1,0 +1,10 @@
+<app-side-menu [optiuni]="optiuniMeniu" (click) = "logOut()"></app-side-menu>
+
+<div class="container">
+    <div class = "pacient_container" *ngFor = "let pacient of pacienti">
+        {{ pacient.Nume | uppercase }} {{ pacient.Prenume }}
+        <br>
+        <button class="btn btn-primary" (click) = "goToDetalii(pacient.ID_Pacient)">Acceseaza detalii</button>
+    </div>
+    <router-outlet></router-outlet>
+</div>

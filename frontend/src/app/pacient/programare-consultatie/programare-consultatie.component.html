@@ -1,0 +1,24 @@
+<h1>Programeaza o consultatie</h1>
+<div class="container mt-5">
+    
+    <div *ngIf = "errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ errormsg }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <form [formGroup] = "programareForm" (ngSubmit) = "programareSubmit()">
+        <div class="col-lg-4 mt-2">
+            <label>Data: </label>
+            <input type="date" class = "form-control" formControlName = "data">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <label>Simptome: </label>
+            <input type="text" class = "form-control" formControlName = "simptome" placeholder="Simptome">
+        </div>
+        
+        <div class="col-lg-4 mt-2">
+            <button class="btn btn-primary btn-sm">Trimite</button>
+        </div>
+    </form>
+</div>

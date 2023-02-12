@@ -1,0 +1,45 @@
+.background{
+    width: 100%;
+    height: 100%;
+
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation-name: changeBackground;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-color: initial;
+    }
+
+    100% {
+        background-color: var(--transparent_black);
+    }
+}
+
+.container{
+    background-color: var(--white);
+    margin: 5% auto 10% auto;
+    width: 40%;
+    border-radius: 10px;
+
+    animation-name: popForm;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.btn-close{
+    position: relative;
+    left: 95%;
+    top: 3vh;
+}
+
+span{
+    padding-left: 3%;
+}

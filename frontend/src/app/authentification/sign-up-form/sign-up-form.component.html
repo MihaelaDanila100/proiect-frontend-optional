@@ -1,0 +1,113 @@
+<div *ngIf = "errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>{{ errormsg }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="background">
+    <form [formGroup] = "signUpForm" (ngSubmit) = "signUpFormSubmit()">
+        <button type="button" class="btn-close" aria-label="Close" (click)="goHome()"></button>
+    
+        <div class="container">
+            <div class="col">
+
+                <div class="form-group">
+                    <label>Nume</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "nume">
+                </div>
+                <div class="form-group">
+                    <label>Prenume</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "prenume">
+                </div>
+                <div>
+                    <label>Sex</label>
+                    <br>
+                    <input type="radio"  class = "radio" formControlName = "gen" value="masculin"> <span class = "radio">Masculin</span>
+                    <br>
+                    <input type="radio" class = "radio" formControlName = "gen" value="feminin"> <span class = "radio">Feminin</span>
+                </div>
+                <div class="form-group">
+                    <label>Data nasterii </label>
+                    <input type="date" id="input_text_2" class="form-control" formControlName = "data_nasterii">
+                </div>
+                <div class="form-group">
+                    <label>CNP</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "cnp">
+                </div>
+                <div class="form-group">
+                    <label>Mobile</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "mobile">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Mail</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "mail">
+                </div>
+                <div class="form-group">
+                    <label>Grupa_sanguina</label>
+                    <input type="text" id="input_text_2" class="form-control"  formControlName = "sange">
+                </div>
+                <div class="form-group">
+                    <label>Rh</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "rh">
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="input_text_1" class="form-control" formControlName = "username">
+                </div>
+                <div class="form-group">
+                    <label>Parola</label>
+                    <input type="password" id="input_text_2" class="form-control" formControlName = "password">
+                </div>
+                <div class="form-group">
+                    <label>Cetatenie</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "cetatenie">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label>Conditii viata</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "conditii_viata">
+                </div>
+                <div class="form-group">
+                    <label>Conditii munca</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "conditii_munca">
+                </div>
+                <div class="form-group">
+                    <label>Comportament(fumator, consum crescut de alcool, ...)</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "comportament">
+                </div>
+                <div class="form-group">
+                    <label>Tratamente permanente</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "tratamente">
+                </div>
+                <div class="form-group">
+                    <label>Alergii</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "alergii">
+                </div>
+                </div>
+                <div class="col">
+                <div class="form-group">
+                    <label>Intolerante</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "intolerante">
+                </div>
+                <div class="form-group">
+                    <label>Inaltime</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "inaltime">
+                </div>
+                <div class="form-group">
+                    <label>Nume medic</label>
+                    <input type="text" id="input_text_2" class="form-control" formControlName = "nume_medic">
+                </div>
+
+            </div>
+        </div>
+    
+        <div class="buttons">
+            <button class="btn btn-success" type="submit">Trimite</button>
+            <button class="btn btn-danger" type="reset">Reset</button>
+        </div>
+    </form>
+
+</div>

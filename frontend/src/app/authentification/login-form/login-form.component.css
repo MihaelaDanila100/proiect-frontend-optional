@@ -1,0 +1,103 @@
+@keyframes changeBackground {
+    0% {
+        background-color: initial;
+    }
+
+    100% {
+        background-color: var(--transparent_black);
+    }
+}
+
+@keyframes popForm {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation-name: changeBackground;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.btn-close{
+    position: relative;
+    left: 70%;
+    top: 1.5vh;
+}
+
+form{
+    background-color: var(--white);
+    margin: 2vh auto 1vh auto;
+    width: 40%;
+    border-radius: 10px;
+
+    animation-name: popForm;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+button{
+    width: 50%;
+    border-radius: 0px;
+}
+
+.exit{
+    position: relative;
+    top: -25vh;
+    left: 92%;
+    font-size: 50px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.images{
+    width: 55%;
+    margin: 15%;
+    margin-left: 23%;
+    margin-top: 3vh;
+}
+
+.form-group{
+    padding-bottom: 2vh;
+    width: 92%;
+}
+
+.form-control{
+    padding-left: 0;
+    margin-left: 0%;
+    margin-bottom: 1vh;
+}
+
+#input_text_1{
+    margin-left: 3.5%;
+}
+
+span{
+    width: 40%;
+    color: var(--dark_grey);
+    cursor: pointer;
+}
+
+span:hover{
+    color: var(--black);
+}

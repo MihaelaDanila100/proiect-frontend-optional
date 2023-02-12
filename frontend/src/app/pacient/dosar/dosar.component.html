@@ -1,0 +1,106 @@
+<!--
+<button *ngIf = "contDoctor" class="btn btn-dark" (click) = "goBackToDoctorPannel()">Leave</button>
+-->
+<div class="caption">
+  <h1>{{ detaliiPacient.Prenume }} {{ detaliiPacient.Nume | uppercase}} <button class="btn btn-primary" (click) = "logOut()">Delog</button></h1>   
+  <span class="text-end" (click) = "activateDetails()">Vezi detalii pacient</span>
+</div>
+<div class="container">
+  <div class="accordion" id="accordionExample">
+    <h1>
+      Consultaţii <button class="btn btn-primary" (click) = "goToConsultatie()">Consultaţie nouă</button>
+      <button *ngIf = "contDoctor" class="btn btn-primary" (click) = "goToConsultatieDoctor()">Consultaţie nouă doctor</button>
+    </h1>
+      <div class="accordion-item" *ngFor = "let consultatie of consultatiiPacient">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Consultatie {{ consultatie.Data | date }} - {{ consultatie.Diagnostic | uppercase }}
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>{{ consultatie.Diagnostic | uppercase }}</strong> 
+            <h5>Simptome:</h5> <span class="details">{{ consultatie.Simptome }}</span>
+            <h5>Tratament administrat: </h5> <span class="details">{{ consultatie.Tratament }}</span>
+            <h5>Observatii</h5> <span class="details">{{ consultatie.Observatii }}</span>
+            <h5>Temperatura</h5> <span class="details">{{ consultatie.Temperatura }}</span>
+            <h5>Puls</h5> <span class="details">{{ consultatie.Puls }}</span>
+            <h5>Tensiune</h5> <span class="details">{{ consultatie.Tensiune }}</span>
+            <h5>Greutate</h5> <span class="details">{{ consultatie.Greutate }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="spitalizari">
+      <h1>Spitalizari</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Diagnostic</th>
+            <th scope="col">Epicriza</th>
+            <th scope="col">Tratamente</th>
+            <th scope="col">Recomandari</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let spitalizare of spitalizariPacient">
+            <td>{{ spitalizare.Data | date }}</td>
+            <td>{{ spitalizare.Diagnostic }}</td>
+            <td>{{ spitalizare.Epicriza }}</td>
+            <td>{{ spitalizare.Tratamente_aplicate }}</td>
+            <td>{{ spitalizare.Recomandari }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<div class="container">
+  <div class="investigatii">
+    <h1>Investigatii</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nume investigatie</th>
+          <th scope="col">Sectia</th>
+          <th scope="col">Spitalul</th>
+          <th scope="col">Diagnostic prezumtiv</th>
+          <th scope="col">Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let investigatie of investigatiiPacient">
+          <td>{{ investigatie.Investigatie | uppercase }}</td>
+          <td>{{ investigatie.Nume }}</td>
+          <td>{{ investigatie.Nume_spital }}</td>
+          <td>{{ investigatie.Diagnostic_prezumtiv }}</td>
+          <td>{{ investigatie.Programare | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="interventii">
+    <h1>Interventii</h1>
+    <div class="accordion-item" *ngFor = "let interventie of interventiiPacient">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          {{ interventie.Interventie | uppercase }}
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <h5>Data:</h5> <span class="details">{{ interventie.Data_interventiei }}</span>
+          <h5>Spital: </h5> <span class="details">{{ interventie.Nume_spital }}</span>
+          <h5>Observatii</h5> <span class="details">{{ interventie.Observatii }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-details *ngIf = "activatedDetails" [pacient] = "detaliiPacient" (onCloseClicked) = "deactivateDetails($event)"></app-details>
+
+<router-outlet></router-outlet>

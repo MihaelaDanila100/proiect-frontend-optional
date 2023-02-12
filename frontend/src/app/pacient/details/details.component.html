@@ -1,0 +1,23 @@
+<div class="background">
+    <div class="container">
+        <button type="button" class="btn-close" aria-label="Close" (click) = "clickClose()"></button>
+        <h1>{{ pacient.Nume | uppercase }} {{ pacient.Prenume }}</h1>
+        <br>
+        <h5>Data nasterii:</h5> <span>{{ pacient.Data_nasterii | date }}</span>
+        <br>
+        <h5>Sex:</h5> <span>{{ pacient.Sex }}</span>
+        <br>
+        <h5>CNP:</h5> <span>{{ pacient.CNP }}</span>
+        <br>
+        <h5>Numar telefon:</h5> <span>{{ pacient.Mobile }}</span>
+        <br>
+        <h5>Email:</h5> <span>{{ pacient.Mail }}</span>
+        <br>
+        <h5>Grupa sanguina:</h5> <span>{{ pacient.Grupa_sanguina }}</span>
+        <br>
+        <h5>Rh:</h5> <span>{{ pacient.Rh }}</span>
+        <br>
+        <h5>Inaltime:</h5> <span>{{ pacient.Inaltime }}</span>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.container{
+    width: 9%;
+    border-right: solid var(--dark_blue) 3px;
+    position: fixed;
+    top: 12vh;
+    left: 0;
+    padding: 0;
+    margin-right: 0;
+}
+
+.optiune_meniu{
+    padding: 3vh 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3vh;
+    transition: 0.35s;
+}
+
+.optiune_meniu:hover{
+    cursor: pointer;
+    background-color: var(--dark_blue);
+    color: var(--white);
+}
